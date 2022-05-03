@@ -1,5 +1,15 @@
 $(function(){
 
+  $('.collection__author-link').click(function() {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($('.collection__author-link').text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+
+    alert('Скопировано');
+	});
+
   $('.footer__item-title').on('click', function(){
     $(this).next('.footer__list').slideToggle();
   })
